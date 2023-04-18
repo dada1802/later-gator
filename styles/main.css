@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+  align-items: center;
+}
+input,
+output {
+  text-align: center;
+  font-size: 2rem;
+  width: 50vw;
+  height: 3rem;
+  border: 1rem solid #450084;
+  border-radius: 1rem;
+  color: #009698;
+  font-family: "Open Sans", sans-serif;
+}
+input:focus {
+  outline-style: solid;
+  outline-width: 0.5rem;
+  outline-color: #8ee4d7 !important;
+}
+
+output {
+  background-color: #f4efe1;
+  color: #333333;
+  font-family: "Roboto", sans-serif;
+}
