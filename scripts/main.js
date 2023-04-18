@@ -25,7 +25,9 @@ input.addEventListener("keydown", (ev) => {
   console.debug("keydown", ev.key);
   if (ev.key === "Enter") {
     console.log("Enter detected. current value:", input.value);
-    // TODO use the provided later() function here
+    later(input.value, function (results) {
+      setOutput(results.target, results.valediction);
+    });
   }
 });
 
@@ -38,8 +40,7 @@ input.addEventListener("keydown", (ev) => {
 
 //
 const setOutput = (target, valediction) => {
-  console.log("setOutput", target, valediction);
-  // TODO see comments just above 🙄
+  output.innerHTML = `${valediction}, ${target}`;
 };
 
 // for Part 2, uncomment the ul in the html.
