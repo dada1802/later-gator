@@ -1,4 +1,4 @@
-//  take a look at the expected behavior here: https://youtu.be/WH2TbnkirpQ
+//  take a look at the expected behavior for Part 1 here: https://youtu.be/WH2TbnkirpQ
 //
 // assume you have access to 2 provided functions:
 // 1. later(target, callback) finds a valediction that is appropriate for a target.
@@ -22,16 +22,14 @@ const output = document.querySelector("output");
 
 // when the input has focus and enter is pressed, invoke the function named later
 input.addEventListener("keydown", (ev) => {
-  console.log("keydown", ev.key);
+  console.debug("keydown", ev.key);
   if (ev.key === "Enter") {
     console.log("Enter detected. current value:", input.value);
-    console.log(_laters)
-    later(input.value, (r) => setOutput(r.target, r.valediction))
-    // ...?
+    // TODO use the provided later() function here
   }
 });
 
-// when you have the result from this function, update the content of the output element with the result formatted as:
+// when you have the result from this function, update(replace) the content of the output element with the result formatted as:
 // "RESULT, TARGET" // where the all caps are placeholders for the corresponding values
 // example:
 // if the result of invoking later with a target of "alligator"
@@ -41,5 +39,12 @@ input.addEventListener("keydown", (ev) => {
 //
 const setOutput = (target, valediction) => {
   console.log("setOutput", target, valediction);
-  output.innerText = `${valediction}, ${target}`;
+  // TODO see comments just above 🙄
 };
+
+// for Part 2, uncomment the ul in the html.
+// change the code so that rather than directly requesting a valediction with the user's input,
+// the page instead queries for matching targets using the provided option() function 
+// (if the user hasn't entered anything, simply exclude the query argument in your invocation to options).
+// add each of the resulting target options as buttons in list items in the ul.
+// when any of these buttons are clicked, user the later() function to request the corresponding valediction and update the output element as in Part 1
