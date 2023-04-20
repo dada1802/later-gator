@@ -49,3 +49,21 @@ const setOutput = (target, valediction) => {
 // (if the user hasn't entered anything, simply exclude the query argument in your invocation to options).
 // add each of the resulting target options as buttons in list items in the ul.
 // when any of these buttons are clicked, user the later() function to request the corresponding valediction and update the output element as in Part 1
+const availableTargets = document.getElementById("available-targets");
+
+options(function(keys) {
+  keys.forEach(function(target) {
+    const button = document.createElement("button");
+    button.textContent = target;
+
+    button.addEventListener("click", function() {
+      later(target, function(results) {
+        setOutput(results.target, results.valediction);
+      });
+    });
+
+    const li = document.createElement("li");
+    li.appendChild(button);
+    availableTargets.appendChild(li);
+  });
+});
